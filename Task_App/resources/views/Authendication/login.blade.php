@@ -25,9 +25,9 @@
             <form action="checkLogin" method="POST">
                 @csrf
                 <input type="hidden" name="role" id="role" value="admin">
-                <label for="email"></label>
+                <label for="email">Email ID</label>
                 <input type="email" name="email" placeholder="Enter your email" required>
-                <label for="password"></label>
+                <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Enter your password" required>
                 <button type="submit" name="submit">Login</button>
             </form>

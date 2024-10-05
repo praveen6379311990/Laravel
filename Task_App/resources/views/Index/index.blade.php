@@ -46,7 +46,7 @@
 
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="/dashboard">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
                                     viewBox="0 0 32 32">
                                     <path
@@ -56,7 +56,7 @@
                                 Dashboard
                             </a>
                         </li>
-
+                        @if ($role == 'admin')
                         <li>
                             <a href="/user">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -77,9 +77,11 @@
                                 User
                             </a>
                         </li>
+                        @endif
+
 
                         <li>
-                            <a href="#">
+                            <a href="/task">
                                 <svg viewBox="0 0 1024 1024" class="icon" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" fill="#000000" width="24" height="24">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -101,7 +103,7 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="/logout">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

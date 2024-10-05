@@ -1,124 +1,62 @@
 @extends('index.index')
-<style>
-    /* body {
-        font-family: Arial, sans-serif;
-        background: url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg) no-repeat;
-        background-size: cover;
-        height: 100vh;
-    } */
-
-    h1 {
-        text-align: center;
-        font-family: Tahoma, Arial, sans-serif;
-        color: #06D85F;
-        margin: 80px 0;
-    }
-
-    .box {
-        width: 40%;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 35px;
-        border: 2px solid #fff;
-        border-radius: 20px/50px;
-        background-clip: padding-box;
-        text-align: center;
-    }
-
-    .button {
-        font-size: 1em;
-        padding: 10px;
-        color: #070606;
-        border: 2px solid #06D85F;
-        border-radius: 20px/50px;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.3s ease-out;
-    }
-
-    .button:hover {
-        background: #06D85F;
-    }
-
-    .overlay {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        transition: opacity 500ms;
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    .overlay:target {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .popup {
-        margin: 70px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 5px;
-        width: 30%;
-        position: relative;
-        transition: all 5s ease-in-out;
-    }
-
-    .popup h2 {
-        margin-top: 0;
-        color: #333;
-        font-family: Tahoma, Arial, sans-serif;
-    }
-
-    .popup .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #333;
-    }
-
-    .popup .close:hover {
-        color: #06D85F;
-    }
-
-    .popup .content {
-        max-height: 30%;
-        overflow: auto;
-    }
-
-    @media screen and (max-width: 700px) {
-        .box {
-            width: 70%;
-        }
-
-        .popup {
-            width: 70%;
-        }
-    }
-</style>
+<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 @section('main')
     <div class="container">
         <div class="createUser">
             <h3>Create User</h3>
             <div class="box">
-                <a class="button" href="#popup1">Let me Pop up</a>
+                <a class="button" href="#popup1">Add User</a>
             </div>
             <div id="popup1" class="overlay">
                 <div class="popup">
-                    <h2>Here i am</h2>
+                    <h2>Add User</h2>
                     <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        Thank to pop me out of that button, but now i'm done so you can close this window.
-                    </div>
+                    <form action="/addusers" method="POST">
+                        @csrf
+                        <label for="username">User Name</label>
+                        <input type="text" name="username" placeholder="Enter your username" required>
+
+                        <label for="email">Email ID</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+
+                        <button type="submit" name="submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+        <div class="listusers">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($listUser as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email_id }}</td>
+                            <td class="actions">
+                                <a href="{{ url('/edituser/' .$user->id) }}" class="edit-btn">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="{{ url('/deleteUser/' .$user->id) }}" class="edit-btn">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
     </div>
 @endsection
