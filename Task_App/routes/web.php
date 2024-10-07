@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [index::class,'home']);
 
+Route::get('/register', [authendication::class,'register']);
+Route::post('/submitRegister', [authendication::class,'submitRegister']);
+
+
 Route::get('/dashboard', [index::class,'dashboard']);
 
 Route::get('/login', [authendication::class,'viewLoginPage']);

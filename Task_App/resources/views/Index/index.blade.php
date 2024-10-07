@@ -46,7 +46,7 @@
 
                     <ul>
                         <li>
-                            <a href="/dashboard">
+                            <a href="/dashboard" >
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
                                     viewBox="0 0 32 32">
                                     <path
@@ -132,7 +132,6 @@
                 </section>
             </nav>
         </header>
-
         {{-- <main class="content-wrap">
             <div class="content">
                 <section class="info-boxes">

@@ -36,8 +36,6 @@ class user extends Controller
 
         $getUserData = DB::table('addusers')->where('id', $id)->get();
 
-        // print_r($getUserData);
-
         return view('User.editUser',['username'=>$username,'role'=>$role,'getUserData'=>$getUserData]);
     }
 
