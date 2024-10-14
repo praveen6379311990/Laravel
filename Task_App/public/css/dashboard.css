@@ -1,0 +1,59 @@
+.container {
+    width: 100%;
+    height: 150%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.userss, .tasks, .completed {
+    width: 300px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin-left: 0px;
+    margin: 0 15px;
+}
+
+.userss:hover, .tasks:hover, .completed:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.userss p, .tasks p, .completed p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+span {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

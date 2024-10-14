@@ -1,0 +1,200 @@
+h1 {
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #06d85f;
+    margin: 80px 0;
+}
+
+.box {
+    width: 20%;
+    position: relative;
+    flex: left;
+    margin-top: -75px;
+    margin-left: 811px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+}
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: #070606;
+    border: 2px solid #2f3130;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background: #ced6d1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #c8cecb;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+/* Popup Form Title */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+.close {
+    font-size: 30px;
+    color: #333;
+    text-decoration: none;
+    float: right;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Label Styling */
+label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #cdd6d1; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Button Styling */
+button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #abb6af; /* Green background */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #28a745; /* Darker green on hover */
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+
+    .popup {
+        width: 70%;
+    }
+}
+
+.listusers {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.actions {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+}
+
+.actions a{
+   color: black;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+

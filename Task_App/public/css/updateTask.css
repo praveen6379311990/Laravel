@@ -1,0 +1,125 @@
+
+.updateTask {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    height: 450px;
+    overflow-y: auto;
+}
+
+
+.updateTask h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.updateTask label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.updateTask input[type="text"],
+.updateTask input[type="date"],
+.updateTask select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.updateTask input[type="text"]:focus,
+.updateTask input[type="date"]:focus,
+.updateTask select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.editor-container {
+    margin-bottom: 20px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.toolbar button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toolbar button:hover {
+    background-color: #ddd;
+}
+
+.toolbar button i {
+    font-size: 18px;
+    color: #333;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+#editor {
+    min-height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+.updateTask button[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.updateTask button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+/* @media (max-width: 600px) {
+    .updateTask {
+        padding: 15px;
+    }
+
+    .toolbar {
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    /* } */
+
+    /* #editor {
+        min-height: 120px;
+    } */
+/* }  */
